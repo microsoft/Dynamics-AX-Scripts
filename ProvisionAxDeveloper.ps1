@@ -1,10 +1,10 @@
 <#     
 .SYNOPSIS     
-   Script used to provision users to use Dynamics AX Developer Tools.  
+   Script used to provision users to use Dynamics 365 for Operations Developer Tools.  
      
 .DESCRIPTION   
-   Script used to provision users to use Dynamics AX Developer Tools. The current user must be part of Administrators group to run this script as well to use
-   Dynamics AX Developer tools. This script creates a Sql Server logins with user[s] provided as arguments and creates corresponding user[s] for Dynamics Xref
+   Script used to provision users to use Dynamics 365 for Operations Developer Tools. The current user must be part of the Administrators group to run this script as well to use
+   Dynamics 365 for Operations Developer tools. This script creates SQL Server logins for the users provided as arguments and creates corresponding users for Dynamics Xref
    database.
       
 .NOTES     
@@ -19,7 +19,7 @@
 Description   
 -----------       
 The user who runs this command must be an administrator. On running this command we will check if the users given in the arguments
-are part of administrators group. If the check passes we will go provision the Dynamics AX Developer Tools for all provided users. If any
+are part of administrators group. If the check passes we will go provision the Dynamics 365 for Operations Developer Tools for all provided users. If any
 of the users are not part of administrators group we will fail the script in the validation phase itself.
 
 Disclaimer:  
@@ -103,7 +103,7 @@ Foreach ($user in $users)
     }
     Else
     {
-        Write-Host "Invalid format. User name must of format 'domain or hostname\username'"
+        Write-Host "Invalid format. User name must be of format 'domain or hostname\username'"
         return -1
     }
 
@@ -116,7 +116,7 @@ Foreach ($user in $users)
 
 If($quit -eq $true) 
 {
-    Write-Host "Users must be part of Administrators group. Please add the user[s] to builtin\Administrators group and re-run the script"
+    Write-Host "Users must be part of Administrators group. Please add the user[s] to the builtin\Administrators group and re-run the script"
     return -1
 }
 #End Validation
